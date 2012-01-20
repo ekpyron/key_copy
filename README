@@ -1,0 +1,14 @@
+This is a simple utility designed to be used with ecryptfs.
+
+It does the following:
+
+It obtains a key from the key management facility and stores it's
+contents in another key.
+
+This is useful while creating a backup of the encrypted content
+of an ecryptfs directory.
+A script can use this utility to store the decryption key under
+another name, then unmount the ecryptfs directory, backup the
+data, restore the decryption key with this utility, remount
+the ecryptfs directory and then remove the copy of the key
+using keyctl.
